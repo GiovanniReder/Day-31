@@ -22,6 +22,10 @@ console.log(user1);
 console.log(user4.compareAge(user1));
 
 /* SECONDO ESERCIZIO */
+// creo la classe pet con le sue proprietà
+// devo aggiungere un metodo per far si che  petOwners1 === petOwners2 true
+const petOwners1 = "gigi";
+const petOwners2 = "pippo";
 
 class pet {
   constructor(petName, ownerName, species, breed) {
@@ -30,33 +34,19 @@ class pet {
     this.species = species;
     this.breed = breed;
   }
-  sameOwner(vero) {
-    return this.ownerName === vero.ownerName;
+  sameOwner(x) {
+    return this.ownerName === x.ownerName;
   }
 }
 
 const form = document.querySelector("form");
 form.onsubmit = function (event) {
   event.preventDefault();
-  const name = document.getElementById("name");
-  console.log(name.value);
+  const pName = document.getElementById("PetName");
+  console.log(pName.value);
 };
 
 const petName = document.getElementById("PetName");
 const ownerName = document.getElementById("OwnerName");
 const species = document.getElementById("Species");
 const breed = document.getElementById("Breed");
-
-const newPet = new pet(petName, ownerName, species, breed);
-
-const listItemPet = document.getElementById("listItemPet");
-listItemPet.textContent =
-  "Pet Name:" +
-  newPet.petName +
-  "Owner Name:" +
-  newPet.ownerName +
-  "Species:" +
-  newPet.species +
-  "Breed:" +
-  newPet.breed;
-petList.appendChild(listItemPet);
